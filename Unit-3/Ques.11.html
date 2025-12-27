@@ -1,21 +1,48 @@
 <!-- Q11: JavaScript arithmetic operations using user input -->
-<!-- ===================================================== -->
-  <!-- Ayush Singh , ERp 10356-->
+<!-- ================================================ -->
+<!-- Ayush Singh , ERP 10356 -->
+
 <!DOCTYPE html>
 <html>
 <body>
 
-<input id="a" type="number">
-<input id="b" type="number">
-<button onclick="calc()">Add</button>
+<h3>Arithmetic Operations</h3>
+
+<input id="a" type="number" placeholder="First number">
+<input id="b" type="number" placeholder="Second number">
+<br><br>
+
+<select id="op">
+    <option value="+">Addition (+)</option>
+    <option value="-">Subtraction (-)</option>
+    <option value="*">Multiplication (*)</option>
+    <option value="/">Division (/)</option>
+    <option value="%">Modulus (%)</option>
+</select>
+
+<button onclick="calculate()">Calculate</button>
 
 <p id="res"></p>
 
 <script>
-function calc(){
+function calculate() {
     var x = Number(document.getElementById("a").value);
     var y = Number(document.getElementById("b").value);
-    document.getElementById("res").innerHTML = x + y;
+    var op = document.getElementById("op").value;
+    var result;
+
+    if (op == "+")
+        result = x + y;
+    else if (op == "-")
+        result = x - y;
+    else if (op == "*")
+        result = x * y;
+    else if (op == "/")
+        result = x / y;
+    else if (op == "%")
+        result = x % y;
+
+    document.getElementById("res").innerHTML = "Result = " + result;
 }
 </script>
 
